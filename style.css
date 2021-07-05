@@ -13,6 +13,8 @@ body {
   font-weight: 300;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
   /*
   max-width: 100%;
   overflow-x: hidden;
@@ -23,7 +25,6 @@ body {
 body::-webkit-scrollbar {
   width: 0.25rem;
 }
-
 body::-webkit-scrollbar-track {
   background: black;
 }
@@ -36,7 +37,7 @@ main {
   position: absolute;
   width: 100%;
   margin: 0px auto;
-  padding: 120px 0px;
+  padding: 120px 0;
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -71,7 +72,10 @@ canvas {
     margin-bottom: var(--spacing);
   }
 
-/* nav styling */
+/* ================ */
+  /* nav styling */
+/* ================ */
+
 header {
   background: var(--background);
   text-align: center;
@@ -98,7 +102,7 @@ header {
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
   display: block;
-  background: white;
+  background: black;
   height: 2px;
   width: 2em;
   border-radius: 2px;
@@ -164,7 +168,7 @@ nav a:hover {
   transition: opacity 250ms ease-in-out 250ms;
 }
 
-@media screen and (min-width: 864px) {
+@media only screen and (min-width: 864px) {
   .nav-toggle-label {
     display: none;
   }
@@ -218,3 +222,339 @@ nav a:hover {
   }
 
 }
+
+/* ================== */
+  /* footer styling */
+/* ================== */
+
+footer {
+  all: unset;
+  grid-column: 2 / span 11;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+}
+
+/* font awesome button icon styling */
+@media only screen and (max-width: 960) {
+  .copy {
+    font-size: 0.7rem;
+    text-decoration: none;
+    padding: 0.5em;
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 0;
+    height: 5em;
+  }
+}
+
+.copy {
+  font-size: 0.7rem;
+  text-decoration: none;
+  padding: 0.5em;
+  margin-top: 5em;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 40%;
+  height: 5em;
+}
+
+.fa {
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.5em;
+  margin-top: 0;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-home{
+  color: white;
+}
+
+.fa-linkedin {
+  color: white;
+}
+
+.fa-instagram {
+  color: white;
+}
+
+.fa-github {
+  color: white;
+}
+
+/* ========================== */
+  /* portfolio grid styling */
+/* ========================== */
+
+.main-content {
+  padding: 0% 10%;
+  flex: 1 1 80%;
+  min-height: 100vh;
+  grid-column: 1 / span 12;
+}
+
+@media only screen and (max-width: 960px) {
+  .main-content {
+    min-height: 75vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-content {
+    min-height: 50vh;
+  }
+}
+
+.portfolio {
+  display: grid;
+  height: 100%;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+}
+
+.portfolio-item {
+  background: var(--background);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.portfolio-item.small {
+  grid-row: span 1;
+  grid-column: span 1;
+}
+
+.portfolio-item.medium {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+.portfolio-item.large {
+  grid-row: span 3;
+  grid-column: span 3;
+}
+
+.portfolio-item.tall {
+  grid-row: span 3;
+  grid-column: span 2;
+}
+
+.portfolio-item.wide {
+  grid-row: span 2;
+  grid-column: span 3;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  /* portfolio item styles */
+
+/* ========================== */
+  /* portfolio item #1 */
+/* ========================== */
+
+.one {
+  background-image: url(img/Berserk.png);
+  color: white;
+  background-size: cover;
+  position: relative;
+
+  transition: all ease-in-out 300ms;
+  z-index: 10;
+}
+
+
+.one:hover::before {
+  opacity: 0.2;
+}
+
+.one::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+
+/* ========================== */
+  /* portfolio item #2 */
+/* ========================== */
+
+.two {
+  background-image: url(img/Berserk.png);
+  color: white;
+  background-size: cover;
+  position: relative;
+
+  transition: all ease-in-out 300ms;
+  z-index: 10;
+}
+
+
+.two:hover::before {
+  opacity: 0.2;
+}
+
+.two::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+
+/* ========================== */
+  /* portfolio item #3 */
+/* ========================== */
+
+.three {
+  background-image: url(img/Berserk.png);
+  color: white;
+  background-size: cover;
+  position: relative;
+
+  transition: all ease-in-out 300ms;
+  z-index: 10;
+}
+
+
+.three:hover::before {
+  opacity: 0.2;
+}
+
+.three::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+
+/* ========================== */
+  /* portfolio item #4 */
+/* ========================== */
+
+.four {
+  background-image: url(img/Berserk.png);
+  color: white;
+  background-size: cover;
+  position: relative;
+
+  transition: all ease-in-out 300ms;
+  z-index: 10;
+}
+
+
+.four:hover::before {
+  opacity: 0.2;
+}
+
+.four::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+
+/* ========================== */
+  /* portfolio item #5 */
+/* ========================== */
+
+.five {
+  background-image: url(img/Berserk.png);
+  color: white;
+  background-size: cover;
+  position: relative;
+
+  transition: all ease-in-out 300ms;
+  z-index: 10;
+}
+
+
+.five:hover::before {
+  opacity: 0.2;
+}
+
+.five::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+
+/* ========================== */
+  /* portfolio item #6 */
+/* ========================== */
+
+.six {
+  background-image: url(img/Berserk.png);
+  color: white;
+  background-size: cover;
+  position: relative;
+
+  transition: all ease-in-out 300ms;
+  z-index: 10;
+}
+
+
+.six:hover::before {
+  opacity: 0.2;
+}
+
+.six::before {
+  content: '';
+  display: block;
+  background: black;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: all ease-in-out 300ms;
+  z-index: -1;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
