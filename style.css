@@ -1,5 +1,5 @@
 :root {
-  --background: rgba(87, 255, 65, 1);
+  --background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
 }
 
 *, *::before, *after {
@@ -32,7 +32,7 @@ body::-webkit-scrollbar-track {
 
 main {
   width: 100vw;
-  color: White;
+  color: black;
   z-index:99;
   position: absolute;
   width: 100%;
@@ -50,6 +50,7 @@ h1, h2, h3, blockquote {
 }
 
 canvas {
+  display: block;
   position: fixed;
   top: 0;
   left:0;
@@ -147,7 +148,7 @@ nav li {
 }
 
 nav a {
-  color: #000;
+  color: black;
   text-decoration: none;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -156,7 +157,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #000;
+  color: black;
 }
 
 .nav-toggle:checked ~ nav {
@@ -262,31 +263,52 @@ footer {
   height: 5em;
 }
 
-.fa {
+.fa-home{
   font-size: 1.5rem;
   text-decoration: none;
   padding: 0.5em;
   margin-top: 0;
+  color: black;
 }
 
-.fa:hover {
-    opacity: 0.7;
-}
-
-.fa-home{
-  color: white;
+.fa-home:hover {
+  opacity: 0.7;
 }
 
 .fa-linkedin {
-  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.5em;
+  margin-top: 0;
+  color: black;
+}
+
+.fa-linkedin:hover {
+  opacity: 0.7;
 }
 
 .fa-instagram {
-  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.5em;
+  margin-top: 0;
+  color: black;
+}
+
+.fa-instagram:hover {
+  opacity: 0.7;
 }
 
 .fa-github {
-  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.5em;
+  margin-top: 0;
+  color: black;
+}
+
+.fa-github:hover {
+  opacity: 0.7;
 }
 
 /* ========================== */
@@ -296,7 +318,7 @@ footer {
 .main-content {
   padding: 0% 10%;
   flex: 1 1 80%;
-  min-height: 100vh;
+  min-height: 75vh;
   grid-column: 1 / span 12;
 }
 
@@ -364,7 +386,7 @@ footer {
 /* ========================== */
 
 .one {
-  background-image: url(img/Berserk.png);
+  background-image: url(img/berserk.png);
   color: white;
   background-size: cover;
   position: relative;
@@ -397,7 +419,7 @@ footer {
 /* ========================== */
 
 .two {
-  background-image: url(img/Berserk.png);
+  background-image: url(img/berserk2.jpg);
   color: white;
   background-size: cover;
   position: relative;
@@ -430,7 +452,7 @@ footer {
 /* ========================== */
 
 .three {
-  background-image: url(img/Berserk.png);
+  background-image: url(img/berserk3.jpg);
   color: white;
   background-size: cover;
   position: relative;
@@ -463,7 +485,7 @@ footer {
 /* ========================== */
 
 .four {
-  background-image: url(img/Berserk.png);
+  background-image: url(img/berserk4.jpg);
   color: white;
   background-size: cover;
   position: relative;
@@ -496,7 +518,7 @@ footer {
 /* ========================== */
 
 .five {
-  background-image: url(img/Berserk.png);
+  background-image: url(img/berserk5.jpg);
   color: white;
   background-size: cover;
   position: relative;
@@ -529,7 +551,7 @@ footer {
 /* ========================== */
 
 .six {
-  background-image: url(img/Berserk.png);
+  background-image: url(img/berserk6.jpg);
   color: white;
   background-size: cover;
   position: relative;
@@ -557,4 +579,73 @@ footer {
   z-index: -1;
 }
 
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+.hero {
+  width: 100%;
+  height: 55vh;
+  grid-column: 1 / span 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 762px) {
+  .hero {
+    content:'';
+    grid-column: 2 / span 6;
+  }
+}
+
+form {
+  width: 90%;
+  max-width: 600px;
+}
+
+.input-group {
+  margin-bottom: 1em;
+  position: relative;
+}
+
+input, textarea {
+  width: 100%;
+  color: black;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid black;
+  background: transparent;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 0;
+  color: black;
+  outline: none;
+  background: transparent;
+  border: 1px solid black;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* this breaks the nav hamburger menu and im too lazy to fix it...
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.row .input-group {
+  flex-basis: 47%;
+}
+
+@media only screen and (max-width: 762px) {
+  .row, .row .input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 48%
+  }
+}
+*/
