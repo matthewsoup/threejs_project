@@ -1,5 +1,5 @@
 :root {
-  --background: rgba(87, 255, 65, 1);
+  --background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgb(255, 255, 255) 100%);
 }
 
 *, *::before, *after {
@@ -9,7 +9,7 @@
 body {
   color: black;
   background-color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 300;
   margin: 0;
   padding: 0;
@@ -21,49 +21,74 @@ body {
   */
 }
 
-/*
+
 body::-webkit-scrollbar {
   width: 0.25rem;
 }
 body::-webkit-scrollbar-track {
-  background: black;
+  background: #0051ff;
 }
-*/
+
 
 main {
-  width: 100vw;
-  color: White;
+  color: black;
   z-index:99;
   position: absolute;
   width: 100%;
+  height: 100%;
   margin: 0px auto;
-  padding: 120px 0;
+  padding: 90px 0;
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  
+  /* uncomment z-index to have full orbit control */
+  /* z-index:-1; */
 } 
 
 h1, h2, h3, blockquote {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-style: normal;
 }
 
 canvas {
+  display: block;
   position: fixed;
   top: 0;
   left:0;
 }
 
+  article {
+    grid-column: 2 / 8;
+    padding: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+
   section {
     grid-column: 2 / 8;
     padding: 1rem;
-    background: var(--dark-bg);
+    background: var(--background);
     font-size: 1.25rem;
     line-height: 1.5;
-    margin-bottom: var(--spacing);
+    border-radius: 1.25rem;
+    box-shadow: 10px 10px 40px rgba(0, 81, 255, 0.2);
   }
 
+  code {
+    grid-column: 2 / 8;
+    padding: 1rem;
+    background: rgb(244, 252, 255);
+    color: rgb(0, 81, 255);
+    border-radius: 1.5em;
+  }
+
+  @media only screen and (max-width: 864px) {
+    code {
+      grid-column: 2 / span 10;
+    }
+  }
 
   blockquote {
     margin: 0;
@@ -77,7 +102,7 @@ canvas {
 /* ================ */
 
 header {
-  background: var(--background);
+  background: rgba(255, 255, 255, 1);
   text-align: center;
   position: fixed;
   z-index: 999;
@@ -128,7 +153,7 @@ nav {
   text-align: left;
   top: 100%;
   left: 0;
-  background: var(--background);
+  background: rgba(255, 255, 255, 1);
   width: 100%;
   transform: scale(1, 0);
   transform-origin: top;
@@ -147,16 +172,16 @@ nav li {
 }
 
 nav a {
-  color: #000;
+  color: black;
   text-decoration: none;
   font-size: 1.2rem;
-  text-transform: uppercase;
+  text-transform: lowercase;
   opacity: 0;
   transition: opacity 150ms ease-in-out;
 }
 
 nav a:hover {
-  color: #000;
+  color: black;
 }
 
 .nav-toggle:checked ~ nav {
@@ -180,6 +205,8 @@ nav a:hover {
 
   .logo {
     grid-column: 2 / 3;
+    text-decoration: none;
+    color:inherit;
   }
 
   nav {
@@ -262,31 +289,56 @@ footer {
   height: 5em;
 }
 
-.fa {
+.fa-home{
   font-size: 1.5rem;
   text-decoration: none;
   padding: 0.5em;
   margin-top: 0;
+  color: black;
 }
 
-.fa:hover {
-    opacity: 0.7;
-}
-
-.fa-home{
-  color: white;
+.fa-home:hover {
+  color: #00ff37;
+  transition: transform 1000ms linear;
 }
 
 .fa-linkedin {
-  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.5em;
+  margin-top: 0;
+  color: black;
+}
+
+.fa-linkedin:hover {
+  color: #0051ff;
+  transition: transform 1000ms linear;
 }
 
 .fa-instagram {
-  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.5em;
+  margin-top: 0;
+  color: black;
+}
+
+.fa-instagram:hover {
+  color: #6f00ff;
+  transition: transform 1000ms linear;
 }
 
 .fa-github {
-  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 0.5em;
+  margin-top: 0;
+  color: black;
+}
+
+.fa-github:hover {
+  color: #d632ff;
+  transition: transform 1000ms linear;
 }
 
 /* ========================== */
@@ -296,7 +348,7 @@ footer {
 .main-content {
   padding: 0% 10%;
   flex: 1 1 80%;
-  min-height: 100vh;
+  min-height: 75vh;
   grid-column: 1 / span 12;
 }
 
@@ -327,7 +379,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  text-decoration: none;
 }
 
 .portfolio-item.small {
@@ -364,9 +416,12 @@ footer {
 /* ========================== */
 
 .one {
-  background-image: url(img/Berserk.png);
+  background-image: url(img/desktoprazor.gif);
   color: white;
-  background-size: cover;
+  text-shadow: 2px 2px 5px #1e05ff;
+  background-repeat: repeat;
+  background-size: 15rem;
+  background-position: center;
   position: relative;
 
   transition: all ease-in-out 300ms;
@@ -381,8 +436,8 @@ footer {
 .one::before {
   content: '';
   display: block;
-  background: black;
-  opacity: 0.8;
+  background: rgb(0, 81, 255, 0.2);
+  opacity: 0.4;
   position: absolute;
   top: 0;
   right: 0;
@@ -397,9 +452,12 @@ footer {
 /* ========================== */
 
 .two {
-  background-image: url(img/Berserk.png);
+  background-image: url(img/desktoprug.jpg);
   color: white;
-  background-size: cover;
+  text-shadow: 2px 2px 5px #1e05ff;
+  background-repeat: repeat;
+  background-size: 15rem;
+  background-position: center;
   position: relative;
 
   transition: all ease-in-out 300ms;
@@ -414,15 +472,15 @@ footer {
 .two::before {
   content: '';
   display: block;
-  background: black;
-  opacity: 0.8;
+  background: rgb(0, 81, 255, 0.2);
+  opacity: 0.4;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  transition: all ease-in-out 300ms;
-  z-index: -1;
+  transition: all linear 300ms;
+  z-index: -10;
 }
 
 /* ========================== */
@@ -430,9 +488,12 @@ footer {
 /* ========================== */
 
 .three {
-  background-image: url(img/Berserk.png);
+  background-image: url(/img/ig.jpg);
   color: white;
-  background-size: cover;
+  text-shadow: 2px 2px 5px #1e05ff;
+  background-repeat: repeat;
+  background-size: 15rem;
+  background-position: center;
   position: relative;
 
   transition: all ease-in-out 300ms;
@@ -447,8 +508,8 @@ footer {
 .three::before {
   content: '';
   display: block;
-  background: black;
-  opacity: 0.8;
+  background: rgb(0, 81, 255, 0.2);
+  opacity: 0.4;
   position: absolute;
   top: 0;
   right: 0;
@@ -463,9 +524,13 @@ footer {
 /* ========================== */
 
 .four {
-  background-image: url(img/Berserk.png);
+  background-image: url(img/subadelabs.png);
   color: white;
-  background-size: cover;
+  text-shadow: 2px 2px 5px #1e05ff;
+  font-size: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20rem;
   position: relative;
 
   transition: all ease-in-out 300ms;
@@ -480,8 +545,8 @@ footer {
 .four::before {
   content: '';
   display: block;
-  background: black;
-  opacity: 0.8;
+  background: rgb(0, 81, 255, 0.2);
+  opacity: 0.4;
   position: absolute;
   top: 0;
   right: 0;
@@ -496,9 +561,12 @@ footer {
 /* ========================== */
 
 .five {
-  background-image: url(img/Berserk.png);
+  background-image: url(img/clothingdesign.jpg);
   color: white;
-  background-size: cover;
+  text-shadow: 2px 2px 5px #1e05ff;
+  background-repeat: repeat;
+  background-size: 15rem;
+  background-position: center;
   position: relative;
 
   transition: all ease-in-out 300ms;
@@ -513,8 +581,8 @@ footer {
 .five::before {
   content: '';
   display: block;
-  background: black;
-  opacity: 0.8;
+  background: rgb(0, 81, 255, 0.2);
+  opacity: 0.4;
   position: absolute;
   top: 0;
   right: 0;
@@ -529,9 +597,12 @@ footer {
 /* ========================== */
 
 .six {
-  background-image: url(img/Berserk.png);
+  background-image: url(img/rpg.JPG);
   color: white;
-  background-size: cover;
+  text-shadow: 2px 2px 5px #1e05ff;
+  background-repeat: repeat;
+  background-size: 15rem;
+  background-position: center;
   position: relative;
 
   transition: all ease-in-out 300ms;
@@ -546,8 +617,8 @@ footer {
 .six::before {
   content: '';
   display: block;
-  background: black;
-  opacity: 0.8;
+  background: rgb(0, 81, 255, 0.2);
+  opacity: 0.4;
   position: absolute;
   top: 0;
   right: 0;
@@ -556,5 +627,113 @@ footer {
   transition: all ease-in-out 300ms;
   z-index: -1;
 }
-
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* ========================== */
+  /* contact page form */
+/* ========================== */
+
+.hero {
+  width: 100%;
+  height: 55vh;
+  grid-column: 1 / span 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 762px) {
+  .hero {
+    content:'';
+    grid-column: 2 / span 6;
+  }
+}
+
+form {
+  width: 90%;
+  max-width: 600px;
+}
+
+.input-group {
+  margin-bottom: 1em;
+  position: relative;
+}
+
+input, textarea {
+  width: 100%;
+  color: black;
+  padding: 10px;
+  outline: 0;
+  border: 1px solid black;
+  background: transparent;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 0;
+  color: black;
+  outline: none;
+  background: transparent;
+  border: 1px solid black;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* this breaks the nav hamburger menu and im too lazy to fix it...
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.row .input-group {
+  flex-basis: 47%;
+}
+
+@media only screen and (max-width: 762px) {
+  .row, .row .input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 48%
+  }
+}
+*/
+
+/* =============================== */
+  /* image onhover effect styles */
+/* =============================== */
+
+img {
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: 0 20px 20px rgb(0, 81, 255, 0.2), 0px 0px 50px rgb(0, 81, 255, 0.2);
+}
+
+/* =============================== */
+  /* project link styling */
+/* =============================== */
+
+  p a:link {
+    color: rgb(255, 116, 248);
+    text-decoration: none;
+}
+
+  p a:visited {
+  color: rgb(255, 116, 248);
+}
+
+/* =============================== */
+       /* selector override */
+/* =============================== */
+
+::-moz-selection { /* Code for Firefox */
+  color: #1d65ff;
+  background: yellow;
+}
+
+::selection {
+  color: #1d65ff;
+  background: yellow;
+}
